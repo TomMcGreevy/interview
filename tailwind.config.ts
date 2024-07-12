@@ -56,6 +56,10 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      dropShadow: {
+        'md': '3px 5px 4px rgba(0, 0, 0, 0.7)',
+
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -77,6 +81,7 @@ const config = {
       },
       fontFamily: {
         customFont: ['"Roboto"', "sans-serif"],
+        bannerFont: ['"Montserrat"', '"Arial"', '"Helvetica"', '"sans-serif"']
       }
     },
   },

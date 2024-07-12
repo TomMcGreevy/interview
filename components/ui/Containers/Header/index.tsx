@@ -39,7 +39,7 @@ const Header: FC<HeaderProps> = ({ items }: HeaderProps) => {
                                 <NavigationMenuContent className={"flex flex-col gap-y-4 w-screen"}>
                                     {items?.length && items?.map((item, index) => (
                                         <Link href={item.href} legacyBehavior passHref key={index} >
-                                            <NavigationMenuLink className='pl-5 border-b border-neutral-200 pb-2.5'>
+                                            <NavigationMenuLink className='pl-5 border-b border-neutral-200 pb-2.5 w-screen'>
                                                 {item.title}
                                             </NavigationMenuLink>
                                         </Link>
