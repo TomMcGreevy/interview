@@ -7,14 +7,15 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "lg" : "1024px",
+        "md": "1024px",
+        "lg": "1024px",
         "2xl": "1400px",
       },
     },
@@ -75,7 +76,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        customFont:['"Roboto"', "sans-serif"],
+        customFont: ['"Roboto"', "sans-serif"],
       }
     },
   },

@@ -19,7 +19,6 @@ type HeaderProps = {
     items: Array<NavItem>;
 }
 const Header: FC<HeaderProps> = ({ items }: HeaderProps) => {
-    const isDesktop = useMediaQuery("(min-width: 1400px)");
     const isMobile = useMediaQuery("(max-width: 1024px)");
 
     return (
@@ -38,9 +37,9 @@ const Header: FC<HeaderProps> = ({ items }: HeaderProps) => {
                             <NavigationMenuItem key={1}>
                                 <NavigationMenuTrigger><MenuIcon open={false} /></NavigationMenuTrigger>
                                 <NavigationMenuContent className={"flex flex-col gap-y-4 w-screen"}>
-                                    {items?.length && items?.map((item) => (
-                                        <Link href={item.href} legacyBehavior passHref>
-                                            <NavigationMenuLink >
+                                    {items?.length && items?.map((item, index) => (
+                                        <Link href={item.href} legacyBehavior passHref key={index} >
+                                            <NavigationMenuLink className='pl-5 border-b border-neutral-200 pb-2.5'>
                                                 {item.title}
                                             </NavigationMenuLink>
                                         </Link>
@@ -52,7 +51,7 @@ const Header: FC<HeaderProps> = ({ items }: HeaderProps) => {
                     )
                     : (
                         items?.length && items?.map((item, index) => (
-                            <NavigationMenuItem key={index} className={!index ? `min-w-${isDesktop ? "full" : "96"}` : ""}>
+                            <NavigationMenuItem key={index} className={!index ? `lg:min-w-96 2xl:min-w-full` : ""}>
                                 <Link href={item.href} legacyBehavior passHref>
                                     <NavigationMenuLink className={`${!!item.button ? "px-7 bg-orange-500 text-white hover:bg-orange-600 hover:text-white focus:text-white " : ""} ${navigationMenuTriggerStyle()}`}>
                                         {item.logo ? <Image src={item.logo} width={200} height={38} alt="logo" /> : item.title}
