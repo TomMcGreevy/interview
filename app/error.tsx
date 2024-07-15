@@ -1,6 +1,6 @@
 'use client'
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
+
+import ErrorBanner from "@/components/ui/Containers/ErrorBanner";
 
 const error = ({
     error,
@@ -8,13 +8,7 @@ const error = ({
 }: { error: Error; reset: () => void }) => {
     // Extend for different error types
     return (
-        <Alert variant="destructive">
-            <ExclamationTriangleIcon className="h-4 w-4" />
-            <AlertTitle>Error</AlertTitle>
-            <AlertDescription>
-                {error.message}
-            </AlertDescription>
-        </Alert>
+        <ErrorBanner error={error} callback={reset} />
     );
 }
 export default error;

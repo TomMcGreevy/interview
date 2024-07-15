@@ -12,7 +12,7 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "relative z-10 flex max-w-max flex-1 items-center justify-center ml-auto mr-auto mt-8 mb-8 min-w-max",
+      "sticky top-0 w-screen bg-white z-10 flex max-w-max flex-1 items-center justify-center ml-auto mr-auto pt-6 pb-6 min-w-full border-b border-orange-500",
       className
     )}
     {...props}
@@ -41,7 +41,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-100 w-max items-center justify-center rounded-md px-3 py-2 text-lg font-customFont font-semibold transition-colors hover:text-accent-foreground focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 hover:text-orange-500 focus:text-orange-500 "
+  "group inline-flex h-100 w-max items-center justify-center rounded-md px-3 py-2 text-lg font-customFont font-semibold transition-colors hover:text-accent-foreground focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 hover:text-orange-500 focus:text-orange-500 "
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -69,7 +69,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "w-auto left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-top-52 data-[motion=from-start]:slide-in-from-top-52 data-[motion=to-end]:slide-out-to-top-52 data-[motion=to-start]:slide-out-to-top-52 md:absolute md:w-auto ",
+      "w-auto left-0 top-0 w-full h-auto data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-top-52 data-[motion=from-start]:slide-in-from-top-52 data-[motion=to-end]:slide-out-to-top-52 data-[motion=to-start]:slide-out-to-top-52 md:absolute md:w-auto ",
       className
     )}
     {...props}
